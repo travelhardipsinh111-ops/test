@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Travel Packages</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: #f5f7fc;
+            min-height: 100vh;
+            padding: 48px 16px;
+            font-family: sans-serif;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 32px;
+        }
+
+
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .grid { grid-template-columns: repeat(3, 1fr);}
+        }
+
+        .card {
+            background: #fff5eb;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            transition: box-shadow 0.3s;
+            width: 100%;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+        }
+
+        .card img {
+            width: 100%;
+            height: 224px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-body {
+            padding: 24px;
+        }
+
+        .card-body h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: flex-start;
+            font-size: 0.95rem;
+            color: #64748b;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .info-row i {
+            font-size: 1.25rem;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .info-row .pin { color: #e54b4b; }
+        .info-row .clock { color: #334155; }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-primary {
+            flex: 1;
+            background: #302f2e;
+            color: #ffffff;
+            font-size: 0.875rem;
+            font-weight: 700;
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            display: block;
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover { background: #a6ce3a; }
+
+        .copy-btn {
+            background: #f8f9fc;
+            color: #475569;
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid #f1f5f9;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .copy-btn:hover { background: #e2e8f0; }
+
+        .copy-btn i { font-size: 1.25rem; }
+
+        #toast {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #22c55e;
+            color: #fff;
+            padding: 0.6rem 1.4rem;
+            border-radius: 999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="toast">✓ Copied!</div>
+
+    <div class="container" id="card-container">
+        <h2>Creative Packages</h2>
+
+        <div style="display: flex; justify-content: center; margin-bottom: 32px;">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search by destination or country..."
+        style="width: 100%; max-width: 480px; padding: 12px 20px; border-radius: 12px; border: 1px solid #e2e8f0; font-size: 0.95rem; outline: none; box-shadow: 0 1px 4px rgba(0,0,0,0.06);"
+      />
+    </div>
+    </div>
+    <div class="container">
+
+        <div class="grid">
+
+            
+            <!-------------------------------------------- Creative Kazakhstan ------------------------------------------------------>
+
+            <div class="card">
+                <img src="https://travelmentor.in/wp-content/uploads/2026/04/Andaman-package-1.jpg" alt="Creative Kazakhstan">
+                <div class="card-body">
+                    <h3 class="card-title">Creative Andaman Escape</h3>
+                    <div class="info">
+                        <div class="info-row code">
+                            <i class="ph ph-magnifying-glass"></i>
+                            TM26AN01
+                        </div>
+                        <div class="info-row">
+                            <i class="ph-fill ph-map-pin pin"></i>
+                            Port Blair, Havelock
+                        </div>
+                        <div class="info-row">
+                            <i class="ph ph-clock clock"></i>
+                            4 Nights / 5 Days
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="https://drive.google.com/file/d/1UEiSSR3_taYH13BdWccj2KTNuK7Ir3QR/view" class="btn-primary" target="_blank">View PDF</a>
+                        <button class="copy-btn" data-text="*Travel Mentor*
+*Creative Andaman Escape*
+
+_Duration: 4 Nights / 5 Days_
+_2N Port Blair • 1N Havelock • 1N Port Blair_
+
+Experience the serene beauty of the Andaman Islands—featuring pristine beaches, turquoise waters, and historic landmarks 🌊
+
+From the charm of Port Blair to the clear shores of Havelock Island, this journey offers a perfect blend of relaxation and exploration.
+
+Click below to view the detailed PDF itinerary.
+https://drive.google.com/file/d/1UEiSSR3_taYH13BdWccj2KTNuK7Ir3QR/view">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://travelmentor.in/wp-content/uploads/2026/04/Andaman-package-2.jpg" alt="Creative Kazakhstan">
+                <div class="card-body">
+                    <h3 class="card-title">Creative Andaman Getaway</h3>
+                    <div class="info">
+                        <div class="info-row code">
+                        <i class="ph ph-magnifying-glass"></i>
+                            TM26AN02
+                        </div>
+                        <div class="info-row">
+                            <i class="ph-fill ph-map-pin pin"></i>
+                            Port Blair, Havelock, Neil Island
+                        </div>
+                        <div class="info-row">
+                            <i class="ph ph-clock clock"></i>
+                            4 Nights / 5 Days
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="https://drive.google.com/file/d/1JoLOJtx6r6yLzE2IZ20l4BADhB_8hrF6/view" class="btn-primary" target="_blank">View PDF</a>
+                        <button class="copy-btn" data-text="*Travel Mentor*
+*Creative Andaman Getaway*
+
+_Duration: 4 Nights / 5 Days_
+_1N Port Blair • 1N Havelock • 1N Neil Island • 1N Port Blair_
+
+Experience the untouched beauty of the Andaman Islands—pristine beaches, clear waters, and serene island landscapes 🌊
+
+From Port Blair to Havelock and Neil Island, this journey offers a refined blend of relaxation and exploration.
+
+Click below to view the detailed PDF itinerary.
+https://drive.google.com/file/d/1JoLOJtx6r6yLzE2IZ20l4BADhB_8hrF6/view">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://travelmentor.in/wp-content/uploads/2026/04/Andaman-package-3.jpg" alt="Creative Kazakhstan">
+                <div class="card-body">
+                    <h3 class="card-title">Creative Andaman Retreat</h3>
+                    <div class="info">
+                        <div class="info-row code">
+                            <i class="ph ph-magnifying-glass"></i>
+                            TM26AN03
+                        </div>
+                        <div class="info-row">
+                            <i class="ph-fill ph-map-pin pin"></i>
+                            Port Blair, Havelock
+                        </div>
+                        <div class="info-row">
+                            <i class="ph ph-clock clock"></i>
+                            5 Nights / 6 Days
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="https://drive.google.com/file/d/1ajHv3dfzii8DDK1qIY_oZAVdeLvlX-Ur/view" class="btn-primary" target="_blank">View PDF</a>
+                        <button class="copy-btn" data-text="*Travel Mentor*
+*Creative Andaman Retreat*
+
+_Duration: 5 Nights / 6 Days_
+_2N Port Blair • 2N Havelock • 1N Port Blair_
+
+Experience the pristine beauty of the Andaman Islands—turquoise waters, white-sand beaches, and rich heritage 🌊
+
+From Port Blair to Havelock Island, this journey offers a seamless blend of relaxation and exploration.
+
+Click below to view the detailed PDF itinerary..
+https://drive.google.com/file/d/1ajHv3dfzii8DDK1qIY_oZAVdeLvlX-Ur/view">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://travelmentor.in/wp-content/uploads/2026/04/Andaman-package-4.jpg" alt="Creative Kazakhstan">
+                <div class="card-body">
+                    <h3 class="card-title">Creative Andaman Sojourn</h3>
+                    <div class="info">
+                        <div class="info-row code">
+                            <i class="ph ph-magnifying-glass"></i>
+                            TM26AN04
+                        </div>
+                        <div class="info-row">
+                            <i class="ph-fill ph-map-pin pin"></i>
+                            Port Blair, Havelock, Neil Island
+                        </div>
+                        <div class="info-row">
+                            <i class="ph ph-clock clock"></i>
+                            5 Nights / 6 Days
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="https://drive.google.com/file/d/1oEoa4c_OZEOYD3C72D756yZbzjQDvS7T/view" class="btn-primary" target="_blank">View PDF</a>
+                        <button class="copy-btn" data-text="*Travel Mentor*
+                        
+*Creative Andaman Sojourn*
+
+_Duration: 5 Nights / 6 Days_
+_1N Port Blair • 2N Havelock • 1N Neil Island • 1N Port Blair_
+
+Experience the untouched beauty of the Andaman Islands—pristine beaches, clear waters, and serene island landscapes 🌊
+
+From Port Blair to Havelock and Neil Island, this journey offers a refined balance of relaxation and exploration.
+
+Click below to view the detailed PDF itinerary.
+https://drive.google.com/file/d/1oEoa4c_OZEOYD3C72D756yZbzjQDvS7T/view">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://travelmentor.in/wp-content/uploads/2026/04/Andaman-package-5.jpg" alt="Creative Kazakhstan">
+                <div class="card-body">
+                    <h3 class="card-title">Creative Andaman Journey</h3>
+                    <div class="info">
+                        <div class="info-row code">
+                            <i class="ph ph-magnifying-glass"></i>
+                            TM26AN05
+                        </div>
+                        <div class="info-row">
+                            <i class="ph-fill ph-map-pin pin"></i>
+                            Port Blair, Havelock, Neil Island
+                        </div>
+                        <div class="info-row">
+                            <i class="ph ph-clock clock"></i>
+                            6 Nights / 7 Days
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="https://drive.google.com/file/d/12WPG2phieMhIwaz2j5DIOf9tibdlVrOQ/view" class="btn-primary" target="_blank">View PDF</a>
+                        <button class="copy-btn" data-text="*Travel Mentor*
+*Creative Andaman Journey*
+
+_Duration: 6 Nights / 7 Days_
+_2N Port Blair • 2N Havelock • 1N Neil Island • 1N Port Blair_
+
+Experience the breathtaking beauty of the Andaman Islands—pristine beaches, clear waters, and vibrant marine life 🌊
+
+From Port Blair to Havelock and Neil Island, this journey offers a seamless blend of relaxation and exploration.
+
+Click below to view the detailed PDF itinerary.
+https://drive.google.com/file/d/12WPG2phieMhIwaz2j5DIOf9tibdlVrOQ/view">
+                            <i class="ph ph-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            
+
+    <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const grid = document.querySelector(".grid");
+
+    // ── Sort cards alphabetically by h3 title ──
+    const cards = Array.from(grid.querySelectorAll(".card"));
+    cards.sort((a, b) => {
+      const titleA = a.querySelector("h3").textContent.trim().toLowerCase();
+      const titleB = b.querySelector("h3").textContent.trim().toLowerCase();
+      return titleA.localeCompare(titleB);
+    });
+    cards.forEach(card => grid.appendChild(card));
+
+    // ── Search logic ──
+    const searchInput = document.getElementById("search-input");
+    searchInput.addEventListener("input", function () {
+      const query = this.value.trim().toLowerCase();
+
+      grid.querySelectorAll(".card").forEach(card => {
+        const h3Text = card.querySelector("h3")?.textContent.trim().toLowerCase() || "";
+        const codeText = card.querySelector(".code")?.textContent.trim().toLowerCase() || "";
+        const destText = card.querySelector(".info-row .pin")?.parentElement?.textContent.trim().toLowerCase() || "";
+
+        card.style.display = (h3Text.includes(query) || destText.includes(query) || codeText.includes(query)) ? "" : "none";
+      });
+    });
+
+    // ── Copy button logic ──
+    document.querySelectorAll(".copy-btn").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        const text = btn.getAttribute("data-text");
+        const icon = btn.querySelector("i");
+
+        const textarea = document.createElement("textarea");
+        textarea.value = text;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+
+        icon.className = "ph ph-check";
+        btn.style.background = "#dcfce7";
+        btn.style.color = "#16a34a";
+        btn.style.borderColor = "#86efac";
+
+        const toast = document.getElementById("toast");
+        toast.style.display = "block";
+
+        setTimeout(function () {
+          icon.className = "ph ph-copy";
+          btn.style.background = "";
+          btn.style.color = "";
+          btn.style.borderColor = "";
+          toast.style.display = "none";
+        }, 2000);
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
